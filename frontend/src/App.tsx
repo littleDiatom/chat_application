@@ -2,7 +2,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Index from "./components/index";
-import Chat from "./components/Chat";
+import Chat from "./components/Password";
 import Room from "./components/Room";
 import Navbar from "./components/Navbar";
 import NotFound from "./components/NotFound";

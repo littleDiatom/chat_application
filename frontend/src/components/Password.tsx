@@ -19,7 +19,10 @@ const Chat: React.FC = () => {
         }
       );
       setMessage(response.data.message);
-      navigateTo(`/chat/${roomName}/room`);
+
+      navigateTo(`/chat/${roomName}/room`, {
+        state: { password },
+      });
     } catch (error) {
       setMessage("Error setting password");
     }
@@ -44,7 +47,7 @@ const Chat: React.FC = () => {
 
       <button
         onClick={handleSetPassword}
-        className="shadow-md rounded-md hover:bg-gradient-to-r from-sky-500 to-indigo-500  hover:text-slate-50 mb-5"
+        className="shadow-md rounded-md hover:bg-gradient-to-r from-[#265865] to-[#5FA9BD]  hover:text-slate-50 mb-5"
       >
         Set Password
       </button>

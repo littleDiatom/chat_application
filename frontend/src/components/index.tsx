@@ -36,8 +36,11 @@ const Index: React.FC = () => {
           password: password,
         }
       );
-      setMessage(response.data.message);
-      navigateTo(`/chat/${response.data.room_name}/room`);
+      if (response.status === 200) {
+        navigateTo(`/chat/${response.data.room_name}/room`, {
+          state: { password },
+        });
+      }
     } catch (error) {
       setMessage("Error accessing room");
     }
@@ -45,7 +48,7 @@ const Index: React.FC = () => {
 
   return (
     <>
-      <section className="flex flex-col items-center justify-center md:h-fit mt-10 mx-auto max-w-md rounded overflow-hidden shadow-lg bg-gray-50 bg-opacity-30	 ">
+      <section className="flex flex-col items-center justify-center  mt-10 mx-auto max-w-md rounded overflow-hidden shadow-lg bg-gray-50 bg-opacity-30	 ">
         <div className="">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             {/* creation d'une salle */}
