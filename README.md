@@ -3,11 +3,20 @@
 L'objectif du projet est d'élaborer une application de messagerie simple et sans connexion.
 Le stack technique de l'application est le suivant :
 
-- Back-end (work in progress) : Python, Django et Django channels
-- Front-end (non commencé) : React
+- Back-end : Python, Django et Django channels
+- Front-end : React, ViteJS
 
 ## Utilisation
 
+Pour démarrer l'API, ouvrir un terminal depuis le dossier `backend/chatProject/` et lancer la commande suivante pour démarrer le serveur.
+
 ```shell
+python manage.py runserver
+```
+
+En parallèle, ouvrir dans un autre terminal depuis le dossier `frontend/`, et lancer Vite avec les commandes suivantes :
+
+```shell
+npm i
 python manage.py runserver
 ```
