@@ -11,6 +11,7 @@ Le stack technique de l'application est le suivant :
 Pour démarrer l'API, ouvrir un terminal depuis le dossier `backend/chatProject/` et lancer la commande suivante pour démarrer le serveur.
 
 ```shell
+docker run -p 6379:6379 -d redis:5
 python manage.py runserver
 ```
 
@@ -20,3 +21,5 @@ En parallèle, ouvrir dans un autre terminal depuis le dossier `frontend/`, et l
 npm i
 python manage.py runserver
 ```
+
+## Fonctionnement

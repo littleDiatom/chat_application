@@ -25,8 +25,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         text_data_json = json.loads(text_data)
         message = text_data_json['message']
-        pseudo = text_data_json['pseudo']
-        color = text_data_json['color']
+        username = text_data_json['username']
         timestamp = datetime.now(timezone.utc).isoformat()
 
         print(f"Message received: {message}")
@@ -36,23 +35,20 @@ class ChatConsumer(AsyncWebsocketConsumer):
             {
                 'type': 'chat_message',
                 'message': message,
-                'pseudo': pseudo,
-                'color': color,
+                'username': username,
                 'timestamp': timestamp,
             }
         )
 
     async def chat_message(self, event):
         message = event['message']
-        pseudo = event['pseudo']
-        color = event['color']
+        username = event['username']
         timestamp = event['timestamp']
 
         print(f"Sending message: {message}")
 
         await self.send(text_data=json.dumps({
             'message': message,
-            'pseudo': pseudo,
-            'color': color,
+            'username': username,
             'timestamp': timestamp,
         }))

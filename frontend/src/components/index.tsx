@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "./UserContext";
 
 interface ApiResponse {
   room_name: string;
@@ -12,6 +13,8 @@ const Index: React.FC = () => {
   const [roomName, setRoomName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const [userName, setUserName] = useState<string>("");
+  const { setCurrentUserName } = useUser();
   const navigateTo = useNavigate();
 
   const handleCreateRoom = async () => {
@@ -37,6 +40,7 @@ const Index: React.FC = () => {
         }
       );
       if (response.status === 200) {
+        setCurrentUserName(userName);
         navigateTo(`/chat/${response.data.room_name}/room`, {
           state: { password },
         });
@@ -81,8 +85,20 @@ const Index: React.FC = () => {
                 value={password}
                 onChange={(e: any) => setPassword(e.target.value)}
                 placeholder="Password"
-                className="mb-5 rounded-md"
+                className="w-full mt-1 mb-3 shadow-sm rounded-md"
               />
+
+              <div className="flex flex-col mb-6 justify-center">
+                <p className="text-slate-50 mb-2 ">Choose your username: </p>
+                <input
+                  type="text"
+                  value={userName}
+                  onChange={(e) => setUserName(e.target.value)}
+                  placeholder="Enter Username"
+                  className="border-gray-300 rounded-md border mr-2"
+                />
+              </div>
+
               <button
                 onClick={handleAccessRoom}
                 className="shadow-md rounded-md hover:bg-gradient-to-r from-[#265865] to-[#5FA9BD]  hover:text-slate-50"
