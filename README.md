@@ -8,7 +8,7 @@ Le stack technique de l'application est le suivant :
 
 ## Utilisation locale
 
-# Back-end
+### Back-end
 
 Premièrement, ouvrir un terminal depuis le dossier `backend/chatProject/`.
 Créer un environnement virtuel avec la commance suivante :
@@ -35,7 +35,7 @@ Ensuite, lancer la commande suivante pour démarrer le projet Django :
 python manage.py runserver
 ```
 
-# Front-end
+### Front-end
 
 En parallèle, ouvrir dans un autre terminal depuis le dossier `frontend/`, et lancer Vite avec les commandes suivantes :
 
