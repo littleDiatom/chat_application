@@ -1,4 +1,4 @@
-# Messagerie en ligne [en cours]
+# Messagerie en ligne
 
 L'objectif du projet est d'élaborer une application de messagerie simple et sans connexion.
 Le stack technique de l'application est le suivant :
