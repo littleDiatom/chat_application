@@ -12,7 +12,7 @@ import Login from "./components/Login";
 const App: React.FC = () => {
   return (
     <UserProvider>
-      <div className="h-screen bg-[url('./assets/jeremy-bishop-G9i_plbfDgk-unsplash.jpg')] bg-cover bg-center">
+      <div className="h-screen bg-[url('./assets/jeremy-bishop-G9i_plbfDgk-unsplash.jpg')] bg-cover bg-center w-screen">
         <BrowserRouter>
           <Navbar />
           <Routes>

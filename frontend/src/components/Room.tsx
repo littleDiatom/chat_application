@@ -15,6 +15,7 @@ const Room: React.FC = () => {
   const navigateTo = useNavigate();
 
   useEffect(() => {
+    // permet de sécuriser la connexion par un mot de passe
     if (!password) {
       navigateTo("/");
       return;
@@ -46,7 +47,7 @@ const Room: React.FC = () => {
     };
 
     // Redirection vers la page d'accueil après limite de temps atteinte
-    const expirationTime = 1 * 60 * 1000; // 1 minute
+    const expirationTime = 1 * 60 * 1000; // 1 minute pour le test
     const expirationTimeout = setTimeout(() => {
       navigateTo("/");
     }, expirationTime);

@@ -5,7 +5,7 @@ from .models import Room
 ''' 
 Fonction pour nettoyer régulièrement les salles expirées
 Pour le test, la temps limite est fixé à 1 min
-# '''
+'''
 class CleanupExpiredRooms(CronJobBase):
     RUN_EVERY_MINS = 1   #Période d'expiration
 

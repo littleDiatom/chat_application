@@ -4,7 +4,6 @@ export interface Message {
   message: string;
   username: string;
   timestamp: string;
-  color: string;
 }
 
 interface MessagesProps {
