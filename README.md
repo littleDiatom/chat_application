@@ -50,3 +50,11 @@ En parallèle, ouvrir dans un autre terminal depuis le dossier `frontend/`, et l
   ```shell
   npm run dev
   ```
+
+
+## Présentation
+
+
+https://github.com/littleDiatom/chat_application/assets/134620633/e07fb798-bf24-4f7a-a72c-3466d23bb8a2
+
+
